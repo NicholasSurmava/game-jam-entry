@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 export (int) var SPEED = 300
-export (int) var GRAVITY = 6000
-export (int) var JUMP_FORCE = -1000
+export (int) var GRAVITY = 2000
+export (int) var JUMP_FORCE = -800
 
 var velocity = Vector2.ZERO
 
@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -100
 			
 	# Run (shift, triggers)
-			
-	print(velocity.y)
+	
+#	print(velocity.y)
 	
 	if Input.is_action_just_pressed("shoot"):
 		print("SHOOT")
@@ -47,3 +47,4 @@ func _on_Area2D_body_shape_entered(body_id: int, body: Node, body_shape: int, lo
 func _on_dialogue_timer_timeout() -> void:
 	$dialogue.text = ""
 	$dialogue.visible = false
+	print("changing level")
