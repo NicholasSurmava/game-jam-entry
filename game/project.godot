@@ -14,6 +14,11 @@ config/name="godot-game-entry"
 run/main_scene="res://src/Core/Levels/Demo/DemoLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
+
 [input]
 
 left={
