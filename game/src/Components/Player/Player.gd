@@ -28,21 +28,23 @@ func _physics_process(delta: float) -> void:
 			
 	if direction > 0:
 		$AnimatedSprite.flip_h = false
-	elif direction <0:
+	elif direction < 0:
 		$AnimatedSprite.flip_h = true
 	
 	if Input.is_action_just_pressed("shoot"):
+		$AnimatedSprite.set_frame(2)
 		print("SHOOT")
 		
 		var bullet = bulletPath.instance()
 		get_parent().add_child(bullet)
 		bullet.position = self.global_position
-		
+
 		if $AnimatedSprite.flip_h == false:
 			bullet.direction.x = 1
 		else:
 			bullet.direction.x = -1
-		
+	else:
+		$AnimatedSprite.set_frame(0)
 		
 	velocity.y += GRAVITY * delta
 	
