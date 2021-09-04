@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="godot-game-entry"
-run/main_scene="res://src/Core/Levels/Demo/DemoLevel.tscn"
+run/main_scene="res://src/Core/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]

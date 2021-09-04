@@ -61,4 +61,8 @@ __meta__ = {
 wait_time = 3.0
 one_shot = true
 
+[node name="Camera2D" type="Camera2D" parent="."]
+smoothing_enabled = true
+smoothing_speed = 4.0
+
 [connection signal="timeout" from="dialogue_timer" to="." method="_on_dialogue_timer_timeout"]
