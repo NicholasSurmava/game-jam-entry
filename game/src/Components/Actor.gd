@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const bulletPath = preload("res://src/Components/Bullet/Bullet.tscn")
 
-export (int) var SPEED = 450
+export (int) var SPEED = 500
 export (int) var GRAVITY = 2000
 export (int) var JUMP_FORCE = -850
 

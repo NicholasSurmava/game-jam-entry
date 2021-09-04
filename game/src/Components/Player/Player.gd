@@ -50,14 +50,24 @@ extends "res://src/Components/Actor.gd"
 #
 #	velocity = move_and_slide(velocity, Vector2.UP)
 
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("quack"):
+		$dialogue.text = "quack"
+		$dialogue.visible = true
+		$dialogue_timer.wait_time = 1
+		$dialogue_timer.start()
 
-func _on_Area2D_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
-	$dialogue.text = "quack"
-	$dialogue.visible = true
-	$dialogue_timer.start()
+func _on_Start_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
+	if body.name == "Player":
+		get_tree().change_scene("res://src/Core/Levels/Level1/Level1.tscn")
 
 
 func _on_dialogue_timer_timeout() -> void:
 	$dialogue.text = ""
 	$dialogue.visible = false
 	print("changing level")
+
+
+func _on_Quit_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
+	if body.name == "Player":
+		get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
