@@ -5,23 +5,23 @@
 [ext_resource path="res://src/utils/TileMap.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Components/Enemy/Enemy.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 32
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 2 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 18.5768, 299.997 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 85.761, 20.329 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 22.7394, 271.214 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 134.449, 31.2778 )
 
 [node name="MainMenu" type="Node"]
@@ -35,7 +35,7 @@ tile_data = PoolIntArray( 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0
 [node name="GameTitle" type="Label" parent="."]
 anchor_right = 1.0
 margin_bottom = 32.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Duck Knight"
 align = 1
@@ -52,7 +52,7 @@ margin_left = -40.5666
 margin_top = -1.52051
 margin_right = 1.43341
 margin_bottom = 14.4795
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
 position = Vector2( 37.9528, -266.031 )
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Load" type="Area2D" parent="."]
 visible = false
@@ -76,7 +76,7 @@ margin_left = 1.125
 margin_top = -59.7818
 margin_right = 169.125
 margin_bottom = 4.2182
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Load"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -84,7 +84,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Load"]
 position = Vector2( 76, -31.5 )
-shape = SubResource( 6 )
+shape = SubResource( 4 )
 
 [node name="Quit" type="Area2D" parent="."]
 position = Vector2( 4.83263, 160.128 )
@@ -92,7 +92,7 @@ position = Vector2( 4.83263, 160.128 )
 [node name="Label" type="Label" parent="Quit"]
 margin_right = 35.0
 margin_bottom = 16.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -100,7 +100,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
 position = Vector2( -41.4298, -237.311 )
-shape = SubResource( 7 )
+shape = SubResource( 5 )
 
 [node name="Options" type="Area2D" parent="."]
 visible = false
@@ -112,7 +112,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="Options"]
 margin_right = 248.0
 margin_bottom = 64.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 text = "Options"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -120,7 +120,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Options"]
 position = Vector2( 121.436, 31.748 )
-shape = SubResource( 8 )
+shape = SubResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 160.169, -281.265 )

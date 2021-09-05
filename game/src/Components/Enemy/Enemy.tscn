@@ -16,10 +16,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 9.8795, 9.88777 )
+extents = Vector2( 5.00239, 6.29535 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.7172, 11.6127 )
+extents = Vector2( 5.86145, 5.70787 )
 
 [node name="Enemy" type="KinematicBody2D" groups=[
 "enemy",
@@ -31,18 +31,19 @@ position = Vector2( 9.24307, 4.1204 )
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 10.1905, 9.85759 )
+position = Vector2( 9.99364, 12.9286 )
 shape = SubResource( 3 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-position = Vector2( 10.3188, 9.54319 )
+position = Vector2( 10.1713, 16.6517 )
+scale = Vector2( 0.259649, 0.259649 )
 process_parent = true
 physics_process_parent = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 10.3933, 10.096 )
+position = Vector2( 9.98036, 13.5175 )
 shape = SubResource( 4 )
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]

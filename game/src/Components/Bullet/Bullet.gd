@@ -15,6 +15,7 @@ func _on_Area2D_body_shape_entered(body_id: int, body: Node, body_shape: int, lo
 	if body.is_in_group('enemy'):
 		Global.SCORE += 5
 		body.queue_free()
+		self.queue_free()
 		
 	if body.name == "World":
 		self.queue_free()

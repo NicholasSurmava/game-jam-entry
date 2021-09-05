@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/fonts/RaccoonSerifText.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/Components/UI/UI.gd" type="Script" id=2]
 [ext_resource path="res://assets/fonts/RaccoonSerif.tres" type="DynamicFont" id=3]
+[ext_resource path="res://src/Components/UI/GameTime.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
@@ -38,10 +39,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="GameTime" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Timer" type="Timer" parent="GameTime"]
+wait_time = 500.0
+autostart = true
+
+[node name="TimerLabel" type="Label" parent="GameTime"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -85.0
+margin_left = 235.0
+margin_right = 320.0
 margin_bottom = 16.0
 custom_fonts/font = SubResource( 3 )
 text = "Timer: 500"
@@ -72,3 +81,5 @@ text = "Paused"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="timeout" from="GameTime/Timer" to="GameTime" method="_on_Timer_timeout"]
