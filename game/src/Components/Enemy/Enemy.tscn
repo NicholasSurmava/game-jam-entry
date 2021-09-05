@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/Components/Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/DuckManAssets.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 34, 99, 17, 33 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 9.8795, 9.88777 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11.7172, 11.6127 )
+
+[node name="Enemy" type="KinematicBody2D" groups=[
+"enemy",
+]]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 9.24307, 4.1204 )
+frames = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 10.1905, 9.85759 )
+shape = SubResource( 3 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 10.3188, 9.54319 )
+process_parent = true
+physics_process_parent = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 10.3933, 10.096 )
+shape = SubResource( 4 )
+
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
