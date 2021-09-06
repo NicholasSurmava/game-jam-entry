@@ -12,4 +12,3 @@ export (int) var JUMP_FORCE = -850
 
 var velocity = Vector2.ZERO
 var direction:int
-

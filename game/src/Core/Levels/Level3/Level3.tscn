@@ -1,3 +1,40 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://src/utils/TileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://src/Components/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Components/Enemy/Fatty/Fatty.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/Components/UI/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Core/Levels/Level_Base.gd" type="Script" id=5]
+[ext_resource path="res://src/Components/Goal/Goal.tscn" type="PackedScene" id=6]
 
 [node name="Level3" type="Node"]
+script = ExtResource( 5 )
+
+[node name="World" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 589846, 0, 0, 655360, 0, 0, 655382, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 786493, 0, 0, 786494, 0, 0, 786495, 0, 0, 786496, 0, 0, 786497, 0, 0, 786498, 0, 0, 786499, 0, 0, 786500, 0, 0, 786501, 0, 0, 786502, 0, 0, 786509, 0, 0, 786510, 0, 0, 786511, 0, 0, 786512, 0, 0, 786513, 0, 0, 786514, 0, 0, 786515, 0, 0, 786516, 0, 0, 786517, 0, 0, 786518, 0, 0, 786519, 0, 0, 786520, 0, 0, 786521, 0, 0, 786522, 0, 0, 851987, 0, 0, 852025, 0, 0, 852026, 0, 0, 852027, 0, 0, 852028, 0, 0, 852039, 0, 0, 852040, 0, 0, 852041, 0, 0, 852042, 0, 0, 852043, 0, 0, 852044, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0, 917533, 0, 0, 917534, 0, 0, 917535, 0, 0, 917536, 0, 0, 1048630, 0, 0, 1048631, 0, 0, 1114139, 0, 0, 1114165, 0, 0, 1114166, 0, 0, 1179675, 0, 0, 1179699, 0, 0, 1179700, 0, 0, 1245211, 0, 0, 1245234, 0, 0, 1245235, 0, 0, 1310747, 0, 0, 1310748, 0, 0, 1310749, 0, 0, 1310750, 0, 0, 1310751, 0, 0, 1310752, 0, 0, 1310753, 0, 0, 1310754, 0, 0, 1310755, 0, 0, 1310756, 0, 0, 1310757, 0, 0, 1310758, 0, 0, 1310759, 0, 0, 1310760, 0, 0, 1310761, 0, 0, 1310762, 0, 0, 1310763, 0, 0, 1310764, 0, 0, 1310765, 0, 0, 1310766, 0, 0, 1310767, 0, 0, 1310768, 0, 0, 1310769, 0, 0, 1310770, 0, 0 )
+
+[node name="Goal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1415.32, 150.088 )
+switch_to = "res://src/Core/MainMenu.tscn"
+
+[node name="Fatty" parent="." instance=ExtResource( 3 )]
+position = Vector2( 289.297, 135.918 )
+SPEED = 25
+
+[node name="Fatty2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1076.55, 146.621 )
+SPEED = 25
+
+[node name="Fatty3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1400.02, 150.188 )
+SPEED = 25
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1352.45, 162.214 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]
+
+[connection signal="player_hit" from="Player" to="UI" method="_on_Player_player_hit"]

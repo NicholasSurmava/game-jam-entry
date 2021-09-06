@@ -1,24 +1,93 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Components/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/DuckManAssets.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/DuckManAni.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/RaccoonSerif.tres" type="DynamicFont" id=3]
-[ext_resource path="res://src/Components/Player/tombstone.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/DeathOfADuck.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 17, 99, 17, 33 )
+region = Rect2( 0, 0, 22, 26 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 22, 0, 22, 26 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 44, 0, 22, 26 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 21, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 42, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 63, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 84, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 105, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 126, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 147, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 168, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 189, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 210, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 231, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 252, 0, 21, 26 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 22, 0, 22, 26 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": false,
 "name": "dead",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -46,7 +115,7 @@ __meta__ = {
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.365864, 3.17636 )
+position = Vector2( 1.10912, -0.762887 )
 shape = SubResource( 3 )
 
 [node name="dialogue" type="Label" parent="."]
@@ -75,7 +144,7 @@ editor_draw_limits = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 0.331078, 3.50947 )
+position = Vector2( 1.00001, -0.504104 )
 shape = SubResource( 4 )
 
 [connection signal="timeout" from="dialogue_timer" to="." method="_on_dialogue_timer_timeout"]

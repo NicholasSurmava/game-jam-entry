@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") and playing == true:
 		if is_on_floor():
+			$AnimatedSprite.play("jump")
 			velocity.y = JUMP_FORCE
 	
 	if Input.is_action_just_released("jump") and playing == true:
@@ -28,12 +29,16 @@ func _physics_process(delta: float) -> void:
 			velocity.y = -100
 			
 	if direction > 0:
+		$AnimatedSprite.play("default")
 		$AnimatedSprite.flip_h = false
 	elif direction < 0:
+		$AnimatedSprite.play("default")
 		$AnimatedSprite.flip_h = true
+	elif direction == 0 and playing == true:
+		$AnimatedSprite.stop()
+		$AnimatedSprite.frame = 0
 	
 	if Input.is_action_just_pressed("shoot") and playing == true:
-		$AnimatedSprite.set_frame(2)
 		print("SHOOT")
 		
 		var bullet = bulletPath.instance()
@@ -44,8 +49,6 @@ func _physics_process(delta: float) -> void:
 			bullet.direction.x = 1
 		else:
 			bullet.direction.x = -1
-	else:
-		$AnimatedSprite.set_frame(0)
 	
 	if Input.is_action_just_pressed("quack") and playing == true:
 		$dialogue.text = "quack"

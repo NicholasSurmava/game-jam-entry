@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/Components/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/RaccoonSerifText.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://src/utils/TileMap.tres" type="TileSet" id=3]
 [ext_resource path="res://src/Components/Enemy/Walker/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/Skybox.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -25,6 +26,16 @@ extents = Vector2( 22.7394, 271.214 )
 extents = Vector2( 134.449, 31.2778 )
 
 [node name="MainMenu" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -64.256
+margin_top = -59.2163
+margin_right = 408.744
+margin_bottom = 201.784
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="World" type="TileMap" parent="."]
 tile_set = ExtResource( 3 )
@@ -53,6 +64,7 @@ margin_top = -1.52051
 margin_right = 1.43341
 margin_bottom = 14.4795
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,6 +105,7 @@ position = Vector2( 4.83263, 160.128 )
 margin_right = 35.0
 margin_bottom = 16.0
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
