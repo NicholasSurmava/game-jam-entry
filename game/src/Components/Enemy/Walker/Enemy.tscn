@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://src/Components/Enemy/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://src/Components/Enemy/Walker/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://assets/DuckManAssets.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
@@ -16,13 +16,14 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5.00239, 6.29535 )
+extents = Vector2( 4.73722, 5.8757 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 5.86145, 5.70787 )
+extents = Vector2( 7.42923, 7.13428 )
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="Walker" type="KinematicBody2D" groups=[
 "enemy",
+"walker",
 ]]
 script = ExtResource( 1 )
 
@@ -31,7 +32,7 @@ position = Vector2( 9.24307, 4.1204 )
 frames = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 9.99364, 12.9286 )
+position = Vector2( 9.74561, 13.3255 )
 shape = SubResource( 3 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
@@ -43,7 +44,7 @@ physics_process_parent = true
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 9.98036, 13.5175 )
+position = Vector2( 11.8158, 12.1285 )
 shape = SubResource( 4 )
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]

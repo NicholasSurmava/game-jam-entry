@@ -1,8 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Core/Levels/Level_Base.gd" type="Script" id=1]
 [ext_resource path="res://src/Components/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/utils/TileMap.tres" type="TileSet" id=3]
+[ext_resource path="res://src/Components/Enemy/Flyer/Flyer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Components/UI/UI.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "flyer"
+length = 3.5
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Flyer3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 141.482, -0.25, 0, 0.25, 0, 83.4597, -0.25, 0, 0.25, 0, 104.482, -0.25, 0, 0.25, 0, 160.822, -0.25, 0, 0.25, 0, 188.151, -0.25, 0, 0.25, 0, 248.696, -0.25, 0, 0.25, 0, 183.947, -0.25, 0, 0.25, 0, 122.982, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Flyer3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 97.8594, -0.25, 0, 0.25, 0, 106.689, -0.25, 0, 0.25, 0, 75.9961, -0.25, 0, 0.25, 0, 67.1667, -0.25, 0, 0.25, 0, 92.814, -0.25, 0, 0.25, 0, 57.4964, -0.25, 0, 0.25, 0, 35.6331, -0.25, 0, 0.25, 0, 56.235, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5 )
+}
 
 [node name="Level2" type="Node"]
 script = ExtResource( 1 )
@@ -11,7 +38,22 @@ script = ExtResource( 1 )
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
+tile_data = PoolIntArray( 524296, 1, 0, 524299, 1, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 22.0708, -40.2179 )
+
+[node name="Flyer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 264.285, 143.469 )
+
+[node name="Flyer2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 236.285, 108.469 )
+
+[node name="Flyer3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 248.691, 57.4946 )
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "flyer"
+anims/flyer = SubResource( 1 )

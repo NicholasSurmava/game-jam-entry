@@ -4,7 +4,7 @@
 [ext_resource path="res://src/Components/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Core/Levels/Level_Base.gd" type="Script" id=3]
 [ext_resource path="res://src/Components/UI/UI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Components/Enemy/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Components/Enemy/Walker/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Components/Goal/Goal.tscn" type="PackedScene" id=6]
 
 [node name="Level1" type="Node"]
@@ -26,104 +26,105 @@ collision_mask = 8
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 732.723, 252.15 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker6" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 544.828, 177.23 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy10" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker10" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 660.086, 176.169 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy11" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker11" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 741.757, 117.126 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker12" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1177.69, 119.954 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy13" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker13" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1463.92, 197.965 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy14" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker14" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1908.16, 613.746 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy15" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker15" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2051.25, 486.39 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy16" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker16" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2120.92, 359.783 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy17" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker17" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2625.1, 366.525 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy18" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker18" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2896.3, 370.271 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy19" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker19" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 3014.66, 365.027 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy20" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker20" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2974.21, 363.528 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker7" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 377.15, 277.123 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker2" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1299.57, 227.455 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1562.22, 193.782 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker3" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1763.14, 355.416 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker5" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 1940.49, 224.088 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker8" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2584.31, 372.759 )
 collision_mask = 9
 SPEED = 100
 
-[node name="Enemy9" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Walker9" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 2935.83, 371.499 )
 collision_mask = 9
 SPEED = 100
 
 [node name="Goal" parent="." instance=ExtResource( 6 )]
+switch_to = "res://src/Core/Levels/Level2/Level2.tscn"

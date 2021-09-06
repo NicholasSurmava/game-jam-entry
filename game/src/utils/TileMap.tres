@@ -6,7 +6,7 @@
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 20, 16, 11, 15, 3, 2, 29, 0 )
+points = PoolVector2Array( 0, 0, 0, 0, 32, 0, 32, 0, 15.9103, 18.2516 )
 
 [resource]
 0/name = "DuckManAssets.png 0"

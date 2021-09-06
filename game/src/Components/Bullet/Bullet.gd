@@ -13,9 +13,14 @@ func _on_VisibilityNotifier2D_screen_exited() -> void:
 
 func _on_Area2D_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
 	if body.is_in_group('enemy'):
-		Global.SCORE += 5
 		body.queue_free()
 		self.queue_free()
+		
+		if body.is_in_group("flyer"):
+			Global.SCORE += 10
+			
+		elif body.is_in_group("walker"):
+			Global.SCORE += 5
 		
 	if body.name == "World":
 		self.queue_free()
