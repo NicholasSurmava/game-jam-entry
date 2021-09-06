@@ -15,9 +15,3 @@ func _physics_process(delta):
 			$AnimatedSprite.flip_h = false
 			
 	velocity.y = move_and_slide(velocity, Vector2.UP).y
-
-
-func _on_Area2D_body_shape_entered(body_id, body, body_shape, local_shape):
-	
-	if body.name == "Player" and Global.CURRENT_HEALTH > 0 and active == true:
-		Global.CURRENT_HEALTH -= 1

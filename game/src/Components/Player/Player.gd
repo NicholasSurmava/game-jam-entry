@@ -61,3 +61,10 @@ func _on_Start_body_shape_entered(body_id: int, body: Node, body_shape: int, loc
 func _on_Quit_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
 	if body.name == "Player":
 		get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
+
+signal player_hit
+
+func _on_Area2D_body_shape_entered(body_id: int, body: Node, body_shape: int, local_shape: int) -> void:
+	if body.is_in_group("enemy") and Global.CURRENT_HEALTH > 0 and body.active == true:
+		Global.CURRENT_HEALTH -= 1
+		emit_signal("player_hit")

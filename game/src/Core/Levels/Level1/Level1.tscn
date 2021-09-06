@@ -128,3 +128,5 @@ SPEED = 100
 
 [node name="Goal" parent="." instance=ExtResource( 6 )]
 switch_to = "res://src/Core/Levels/Level2/Level2.tscn"
+
+[connection signal="player_hit" from="Player" to="UI" method="_on_Player_player_hit"]

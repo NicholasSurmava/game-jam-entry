@@ -21,5 +21,12 @@ func _process(delta):
 		else:
 			$Paused.visible = false
 			get_tree().paused = false
-		
-	
+
+func _on_Timer_timeout() -> void:
+	$HitReact.visible = false
+
+
+func _on_Player_player_hit() -> void:
+	print("player hit")
+	$HitReact.visible = true
+	$Timer.start()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Components/Actor.gd" type="Script" id=1]
 [ext_resource path="res://assets/DuckManAssets.png" type="Texture" id=2]
@@ -35,9 +35,6 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 5.63073, 6.68014 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 8.02537, 7.95261 )
-
 [node name="Flyer" type="KinematicBody2D" groups=[
 "enemy",
 "flyer",
@@ -55,11 +52,3 @@ frames = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.82589, 8.2589 )
 shape = SubResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.40308, 7.15569 )
-shape = SubResource( 5 )
-
-[connection signal="body_shape_entered" from="Area2D" to="." method="_on_Area2D_body_shape_entered"]
